@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Calibri, sans-serif;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -29,17 +29,12 @@ body {
 }
 
 .btn {
-    background-color: #007bff;
+    background-color: #00ffa2;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-.small-btn {
-    padding: 5px 10px;
-    font-size: 10px;
 }
 
 .btn:hover {
