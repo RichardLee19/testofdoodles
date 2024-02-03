@@ -28,6 +28,10 @@ function LoginPage() {
                 <input type="password" placeholder="Password" />
             </div>
             <button className="btn">{isSignIn ? 'Sign In' : 'Create Account'}</button>
+            
+            { isSignIn && (
+                <button className="btn">{'Forgot Password?'}</button>
+            )}
             <p>{isSignIn ? "Don't have an account? " : "Already have an account? "} 
                <button className="btn" onClick={handleToggleMode}>
                    {isSignIn ? 'Create Account' : 'Sign In'}
