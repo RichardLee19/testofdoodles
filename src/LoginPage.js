@@ -9,6 +9,7 @@ function LoginPage() {
 
     return (
         <div className="container">
+            <h1>{"Welcome to SportsCar Spotter"}</h1>
             <h2>{isSignIn ? 'Sign In' : 'Create Account'}</h2>
             <div className="input-group">
                 <input type="text" placeholder="Username" />
