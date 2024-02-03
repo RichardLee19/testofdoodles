@@ -17,7 +17,7 @@ function LoginPage() {
                 <input type="password" placeholder="Password" />
             </div>
             <button className="btn">{isSignIn ? 'Sign In' : 'Create Account'}</button>
-            <p>{isSignIn ? "New? " : "Already have an account? "} 
+            <p>{isSignIn ? "Don't have an account? " : "Already have an account? "} 
                <button className="btn" onClick={handleToggleMode}>
                    {isSignIn ? 'Create Account' : 'Sign In'}
                </button>

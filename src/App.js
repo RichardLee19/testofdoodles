@@ -2,4 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import LoginPage from './LoginPage';
 
-ReactDOM.render(<LoginPage />, document.getElementById('root'));
+function App() {
+    return (
+        <div>
+            <LoginPage />
+        </div>
+    );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+export default App;
