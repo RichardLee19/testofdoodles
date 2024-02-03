@@ -38,9 +38,13 @@ function LoginPage() {
                 <input type="password" placeholder="Password" />
             </div>
             { isSignIn && (
-                <button className="small-btn">{'Forgot Password?'}</button>
+                <button className="btn">{'Forgot Password?'}</button>
             )}
-            <br />
+            { isSignIn && (
+                <br />
+            )}
+            
+    
             {
             // if isSignIn is True, show 'Sign In'; else show 'Create Account'.
             }
