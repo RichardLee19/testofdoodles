@@ -37,6 +37,11 @@ body {
     cursor: pointer;
 }
 
+.small-btn {
+    padding: 5px 10px;
+    font-size: 10px;
+}
+
 .btn:hover {
     background-color: #0056b3;
 }
