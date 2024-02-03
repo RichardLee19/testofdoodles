@@ -8,9 +8,13 @@ body {
     text-align: center;
 }
 
+.container p {
+    text-align: center;
+}
+
 .input-group {
     margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 .input-group input {
