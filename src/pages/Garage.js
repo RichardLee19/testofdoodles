@@ -2,13 +2,14 @@
 import React from 'react';
 import './Garage.css';
 import BMWLogo from '../images/BMWlogo.png';
+import ProfilePic from '../images/DefaultProfilePicture.png';
 
 export default function Garage() {
     return (
         <div className="garageContainer">
             <div className="userInfo">
                 <div className="userProfile">
-                    <img src="profile-picture-url" alt="Profile" />
+                    <img src={ProfilePic} />
                     <div className="username">Username</div>
                 </div>
                 <div className="userStats">
@@ -33,7 +34,7 @@ export default function Garage() {
             <div className="carGrid">
                 {/* Car brand logos will be rendered here */}
                 <div className="carItem">
-                    <img src= {BMWLogo}/>
+                    <img src = {BMWLogo}/>
                 </div>
                 {/* Add more car items as needed */}
             </div>
