@@ -1,15 +1,22 @@
 {
   "files": {
-    "main.css": "/testofdoodles/static/css/main.e6c13ad2.css",
-    "main.js": "/testofdoodles/static/js/main.86781412.js",
+    "main.css": "/testofdoodles/static/css/main.0d1596dd.css",
+    "main.js": "/testofdoodles/static/js/main.83f443ea.js",
     "static/js/592.90bcc563.chunk.js": "/testofdoodles/static/js/592.90bcc563.chunk.js",
+    "static/media/BMWlogo.png": "/testofdoodles/static/media/BMWlogo.0692192ae981b4618ead.png",
+    "static/media/testa_rossa.jpeg": "/testofdoodles/static/media/testa_rossa.16b757903f6a472fe035.jpeg",
+    "static/media/ford-gt40.jpg": "/testofdoodles/static/media/ford-gt40.a953af2ad0ecd2f2ac42.jpg",
+    "static/media/porsche-_car.jpg": "/testofdoodles/static/media/porsche-_car.8aa782b36826cb8ba628.jpg",
+    "static/media/porsche.png": "/testofdoodles/static/media/porsche.57abc1464e519c7a29dd.png",
+    "static/media/ford.png": "/testofdoodles/static/media/ford.961266a37860ab780051.png",
+    "static/media/ferrari.png": "/testofdoodles/static/media/ferrari.4023a0fd8b0bc27f4c8c.png",
     "index.html": "/testofdoodles/index.html",
-    "main.e6c13ad2.css.map": "/testofdoodles/static/css/main.e6c13ad2.css.map",
-    "main.86781412.js.map": "/testofdoodles/static/js/main.86781412.js.map",
+    "main.0d1596dd.css.map": "/testofdoodles/static/css/main.0d1596dd.css.map",
+    "main.83f443ea.js.map": "/testofdoodles/static/js/main.83f443ea.js.map",
     "592.90bcc563.chunk.js.map": "/testofdoodles/static/js/592.90bcc563.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.86781412.js"
+    "static/css/main.0d1596dd.css",
+    "static/js/main.83f443ea.js"
   ]
 }
