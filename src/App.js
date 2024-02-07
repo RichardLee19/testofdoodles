@@ -33,7 +33,7 @@ function App() {
             <button className="navButton" onClick={() => setActivePage(<CameraPage clientID={123}/>)}>
               <img className="navIcon" src={Camera}/>
             </button>
-            <button className="navButton">
+            <button className="navButton" onClick={() => setActivePage(<Garage/>)}>
               <img className="navIcon" src={Garage}/>
             </button>
       </div>
