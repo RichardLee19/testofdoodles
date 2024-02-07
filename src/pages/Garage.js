@@ -1,7 +1,7 @@
 // Garage.js
 import React from 'react';
 import './Garage.css';
-import AcuraLogo from "..images/CarLogos/AcuraLogo.png";
+// import AcuraLogo from "..images/CarLogos/AcuraLogo.png";
 import AudiLogo from "../images/CarLogos/AudiLogo.jpg";
 import BMWLogo from '../images/CarLogos/BMWLogo.png';
 import InfinitiLogo from '../images/CarLogos/InfinitiLogo.png';
@@ -41,9 +41,9 @@ export default function Garage() {
             </div>
             <div className="carGrid">
                 {/* Car brand logos will be rendered here */}
-                <div className="carItem">
-                    <img src = {AcuraLogo}/>
-                </div>
+                {/* <div className="carItem">
+                    <img src = {AcuraLogo}/> Find new Acura Logo, cause this shit is brocken
+                </div> */}
                 <div className="carItem">
                     <img src = {AudiLogo}/>
                 </div>
