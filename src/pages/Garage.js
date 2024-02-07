@@ -1,7 +1,15 @@
 // Garage.js
 import React from 'react';
 import './Garage.css';
-import BMWLogo from '../images/BMWlogo.png';
+import AcuraLogo from "..images/CarLogos/AcuraLogo.png";
+import AudiLogo from "../images/CarLogos/AudiLogo.jpg";
+import BMWLogo from '../images/CarLogos/BMWLogo.png';
+import InfinitiLogo from '../images/CarLogos/InfinitiLogo.png';
+import PorscheLogo from '../images/CarLogos/PorscheLogo.jpg';
+import TeslaLogo from '../images/CarLogos/TeslaLogo.png';
+import ToyotaLogo from '../images/CarLogos/ToyotaLogo.jpg';
+import VolvoLogo from '../images/CarLogos/VolvoLogo.png';
+import VWLogo from '../images/CarLogos/VWLogo.png';
 import ProfilePic from '../images/DefaultProfilePicture.png';
 
 export default function Garage() {
@@ -34,7 +42,34 @@ export default function Garage() {
             <div className="carGrid">
                 {/* Car brand logos will be rendered here */}
                 <div className="carItem">
+                    <img src = {AcuraLogo}/>
+                </div>
+                <div className="carItem">
+                    <img src = {AudiLogo}/>
+                </div>
+                <div className="carItem">
                     <img src = {BMWLogo}/>
+                </div>
+                <div className="carItem">
+                    <img src = {InfinitiLogo}/>
+                </div>
+                <div className="carItem">
+                    <img src = {PorscheLogo}/>
+                </div>
+                <div className="carItem">
+                    <img src = {TeslaLogo}/>
+                </div>
+                <div className="carItem">
+                    <img src = {ToyotaLogo}/>
+                </div>
+                <div className="carItem">
+                    <img src = {ToyotaLogo}/>
+                </div>
+                <div className="carItem">
+                    <img src = {VolvoLogo}/>
+                </div>
+                <div className="carItem">
+                    <img src = {VWLogo}/>
                 </div>
                 {/* Add more car items as needed */}
             </div>
