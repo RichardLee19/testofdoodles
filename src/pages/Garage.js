@@ -1,7 +1,7 @@
 // Garage.js
 import React from 'react';
 import './Garage.css';
-import BMWLogo from '.../images/BMWLogo.png';
+import BMWLogo from '../images/BMWlogo.png';
 
 export default function Garage() {
     return (
