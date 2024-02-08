@@ -1,29 +1,15 @@
 {
   "files": {
-    "main.css": "/testofdoodles/static/css/main.84458416.css",
-    "main.js": "/testofdoodles/static/js/main.a41d379a.js",
+    "main.css": "/testofdoodles/static/css/main.e6c13ad2.css",
+    "main.js": "/testofdoodles/static/js/main.28eb671a.js",
     "static/js/592.90bcc563.chunk.js": "/testofdoodles/static/js/592.90bcc563.chunk.js",
-    "static/media/BMWLogo.png": "/testofdoodles/static/media/BMWLogo.0692192ae981b4618ead.png",
-    "static/media/testa_rossa.jpeg": "/testofdoodles/static/media/testa_rossa.16b757903f6a472fe035.jpeg",
-    "static/media/ford-gt40.jpg": "/testofdoodles/static/media/ford-gt40.a953af2ad0ecd2f2ac42.jpg",
-    "static/media/VWLogo.png": "/testofdoodles/static/media/VWLogo.818e7dff5bdc6b95d9b8.png",
-    "static/media/VolvoLogo.png": "/testofdoodles/static/media/VolvoLogo.e5b94f424aef97e67f39.png",
-    "static/media/porsche-_car.jpg": "/testofdoodles/static/media/porsche-_car.8aa782b36826cb8ba628.jpg",
-    "static/media/porsche.png": "/testofdoodles/static/media/porsche.57abc1464e519c7a29dd.png",
-    "static/media/InfinitiLogo.png": "/testofdoodles/static/media/InfinitiLogo.d5bc7cc2946e63164261.png",
-    "static/media/ToyotaLogo.jpg": "/testofdoodles/static/media/ToyotaLogo.e98d9688df7ab4a4baba.jpg",
-    "static/media/AudiLogo.jpg": "/testofdoodles/static/media/AudiLogo.1be9585591e6a443290d.jpg",
-    "static/media/PorscheLogo.jpg": "/testofdoodles/static/media/PorscheLogo.eb6b539332667b6ebf97.jpg",
-    "static/media/TeslaLogo.png": "/testofdoodles/static/media/TeslaLogo.a7f4d496b3479a3231bc.png",
-    "static/media/ford.png": "/testofdoodles/static/media/ford.961266a37860ab780051.png",
-    "static/media/ferrari.png": "/testofdoodles/static/media/ferrari.4023a0fd8b0bc27f4c8c.png",
     "index.html": "/testofdoodles/index.html",
-    "main.84458416.css.map": "/testofdoodles/static/css/main.84458416.css.map",
-    "main.a41d379a.js.map": "/testofdoodles/static/js/main.a41d379a.js.map",
+    "main.e6c13ad2.css.map": "/testofdoodles/static/css/main.e6c13ad2.css.map",
+    "main.28eb671a.js.map": "/testofdoodles/static/js/main.28eb671a.js.map",
     "592.90bcc563.chunk.js.map": "/testofdoodles/static/js/592.90bcc563.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84458416.css",
-    "static/js/main.a41d379a.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.28eb671a.js"
   ]
 }
