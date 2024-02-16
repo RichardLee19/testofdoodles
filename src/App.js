@@ -1,48 +1,61 @@
 import './App.css';
-import HomePage from './pages/HomePage';
-import CameraPage from './pages/CameraPage';
-import GaragePage from './pages/Garage';
 import React from 'react';
 import { useState } from 'react';
 
-import Camera from "./images/camera.png";
-import Garage from "./images/garage.png";
-import Home from "./images/home.png";
+import TestPage from './pages/TestPage';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import GaragePage from './pages/GaragePage';
+import CameraPage from './pages/CameraPage';
+import CatchPage from './pages/CatchPage';
 
 function App() {
 
-  //active page variable
-  //allows only one section of page to be rendered at a time
-  const [activePage, setActivePage] = useState(<HomePage/>)
+  const [activePage, setActivePage] = useState(null);
 
+  const changePage = (page) => () =>
+    {
+      setActivePage(<LoginPage changePage={changePage}/>)
+      switch(page)
+      {
+        case "Login":
+          setActivePage(<LoginPage changePage={changePage}/>)
+          break;
+        
+        case "Garage":
+          setActivePage(<GaragePage changePage={changePage}/>)
+          break;
 
-  //main app return
-  //just renders the activePage and navbar
+        case "Home":
+          setActivePage(<HomePage changePage={changePage}/>)
+          break;
+
+        case "Camera":
+          setActivePage(<CameraPage changePage={changePage}/>)
+          break;
+
+        case "Test":
+          setActivePage(<TestPage changePage={changePage}/>)
+          break;
+
+        case "Catch":
+          setActivePage(<CatchPage changePage={changePage}/>)
+          break;
+
+        default:
+          setActivePage(<TestPage changePage={changePage}/>)
+          break;
+      }
+        
+    }
+  
+
   return (
-    <div class="app">
-      <div className="topDisplay">
-        <h1>Sportscar Spotter</h1>
-      </div>
-      <div className="content">
-        {activePage}
-      </div>
-      
-      <div className="nav">
-            <button className="navButton" onClick={() => setActivePage(<HomePage/>)}>
-              <img className="navIcon" src={Home}/>
-            </button>
-            <button className="navButton" onClick={() => setActivePage(<CameraPage clientID={123}/>)}>
-              <img className="navIcon" src={Camera}/>
-            </button>
-            <button className="navButton" onClick={() => setActivePage(<GaragePage/>)}>
-              <img className="navIcon" src={Garage}/>
-            </button>
-      </div>
+    <div className="app">
+      {activePage ? activePage : <TestPage changePage={changePage} />}
     </div>
   );
   
 }
-
-//<Card make="Ferrari" rarity={100} model="250 Testa Rossa" generation="1957-1961"/>
 
 export default App;

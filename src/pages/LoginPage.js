@@ -19,7 +19,7 @@ function LoginPage() {
             {
             //Since value is set to True, will default to Sign in. Else, header changes to Create Account.
             }
-            <h2>{isSignIn ? 'Sign In' : 'Create Account'}</h2> 
+            <h2>{isSignIn ? 'Log In' : 'Register'}</h2> 
 
             {
             //Conditional Rendering Statement. If !iSignIn (If we are in the Create Account Page), display
@@ -32,7 +32,7 @@ function LoginPage() {
                 </div>
             )}
             <div className="input-group">
-                <input type="text" placeholder="Username" />
+                <input type="text" placeholder="Email" />
             </div>
             <div className="input-group">
                 <input type="password" placeholder="Password" />
