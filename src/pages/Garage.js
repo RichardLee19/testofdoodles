@@ -12,7 +12,7 @@ import VolvoLogo from '../images/CarLogos/VolvoLogo.png';
 import VWLogo from '../images/CarLogos/VWLogo.png';
 import ProfilePic from '../images/DefaultProfilePicture.png';
 
-export default function Garage() {
+export default function Garage({changePage}) {
     return (
         <div className="garageContainer">
             <div className="userInfo">
@@ -71,6 +71,7 @@ export default function Garage() {
                 <div className="carItem">
                     <img src = {VWLogo}/>
                 </div>
+                <button onClick={changePage("Test")}>Go to Test Page</button>
                 {/* Add more car items as needed */}
             </div>
             {/* Or, for list view */}

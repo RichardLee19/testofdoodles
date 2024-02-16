@@ -6,6 +6,7 @@ import TestPage from './pages/TestPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import GaragePage from './pages/GaragePage';
+import Garage from './pages/Garage';
 import CameraPage from './pages/CameraPage';
 import CatchPage from './pages/CatchPage';
 
@@ -23,7 +24,7 @@ function App() {
           break;
         
         case "Garage":
-          setActivePage(<GaragePage changePage={changePage}/>)
+          setActivePage(<Garage changePage={changePage}/>)
           break;
 
         case "Home":

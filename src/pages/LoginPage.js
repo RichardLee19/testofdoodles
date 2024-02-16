@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-function LoginPage() {
+function LoginPage({changePage}) {
     const [isSignIn, setIsSignIn] = useState(true); 
     const [email, setEmail] = useState('');
 
@@ -28,7 +28,7 @@ function LoginPage() {
 
             { !isSignIn && (
                 <div className="input-group">
-                    <input type="email" placeholder="Email" value={email} onChange={handleEmailChange} />
+                    <input type="email" placeholder="Displayname" value={email} onChange={handleEmailChange} />
                 </div>
             )}
             <div className="input-group">
@@ -55,6 +55,7 @@ function LoginPage() {
                    {isSignIn ? 'Create Account' : 'Sign In'}
                </button>
             </p>
+            <button onClick={changePage("Test")}>Go to Test Page</button>
         </div>
     );
 }
