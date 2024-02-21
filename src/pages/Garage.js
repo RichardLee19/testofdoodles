@@ -72,15 +72,7 @@ export default function Garage({changePage}) {
                     <img src = {VWLogo}/>
                 </div>
                 <button onClick={changePage("Test")}>Go to Test Page</button>
-                {/* Add more car items as needed */}
             </div>
-            {/* Or, for list view */}
-            {/* <ul className="carList">
-                <li>Car Brand 1</li>
-                <li>Car Brand 2</li>
-                <li>Car Brand 3</li>
-                // Add more list items as needed
-            </ul> */}
         </div>
     );
 }
