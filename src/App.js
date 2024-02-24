@@ -10,13 +10,27 @@ import Garage from './pages/Garage';
 import CameraPage from './pages/CameraPage';
 import CatchPage from './pages/CatchPage';
 
+//cameron
+//the overall main app function
 function App() {
 
+  //cameron
+  //the active page is the variable we use to switch pages. The value is the page the user is viewing
+  //setActivePage changes the variable activaPage via react's useState
   const [activePage, setActivePage] = useState(null);
+  const [imageSrc, setImageSource] = useState("");
 
-  const changePage = (page) => () =>
+
+  //cameron
+  //the navigation function
+  //page = the string of the page you want to go to
+  const  changePage = (page) =>
     {
-      setActivePage(<LoginPage changePage={changePage}/>)
+
+      console.log("PAGE SENT: " + page);
+
+      //cameron
+      //the overall page navigation logic
       switch(page)
       {
         case "Login":
@@ -24,7 +38,7 @@ function App() {
           break;
         
         case "Garage":
-          setActivePage(<Garage changePage={changePage}/>)
+          setActivePage(<GaragePage changePage={changePage}/>)
           break;
 
         case "Home":
@@ -32,7 +46,7 @@ function App() {
           break;
 
         case "Camera":
-          setActivePage(<CameraPage changePage={changePage}/>)
+          setActivePage(<CameraPage changePage={changePage} setSource={setImageSource}/>)
           break;
 
         case "Test":
@@ -40,7 +54,7 @@ function App() {
           break;
 
         case "Catch":
-          setActivePage(<CatchPage changePage={changePage}/>)
+          setActivePage(<CatchPage changePage={changePage} iSource={imageSrc}/>)
           break;
 
         default:
@@ -51,7 +65,15 @@ function App() {
     }
   
 
+    //cameron
+    //the actual view of the app
   return (
+
+    //cameron
+    //the logic of the app. If activePage is null, we create a page. 
+    //This does not set the activePage variable, but no route out of there 
+    //allows for it to NOT be set and still exit the page
+    //this allows full navigation of the site while maintaining the same URL
     <div className="app">
       {activePage ? activePage : <TestPage changePage={changePage} />}
     </div>
