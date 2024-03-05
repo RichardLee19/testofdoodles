@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/testofdoodles/static/css/main.0c9ae8f9.css",
-    "main.js": "/testofdoodles/static/js/main.5432adc4.js",
+    "main.css": "/testofdoodles/static/css/main.545c1625.css",
+    "main.js": "/testofdoodles/static/js/main.ec20263b.js",
     "static/js/592.90bcc563.chunk.js": "/testofdoodles/static/js/592.90bcc563.chunk.js",
     "static/media/BMWLogo.png": "/testofdoodles/static/media/BMWLogo.0692192ae981b4618ead.png",
     "static/media/testa_rossa.jpeg": "/testofdoodles/static/media/testa_rossa.16b757903f6a472fe035.jpeg",
@@ -18,12 +18,12 @@
     "static/media/ford.png": "/testofdoodles/static/media/ford.961266a37860ab780051.png",
     "static/media/ferrari.png": "/testofdoodles/static/media/ferrari.4023a0fd8b0bc27f4c8c.png",
     "index.html": "/testofdoodles/index.html",
-    "main.0c9ae8f9.css.map": "/testofdoodles/static/css/main.0c9ae8f9.css.map",
-    "main.5432adc4.js.map": "/testofdoodles/static/js/main.5432adc4.js.map",
+    "main.545c1625.css.map": "/testofdoodles/static/css/main.545c1625.css.map",
+    "main.ec20263b.js.map": "/testofdoodles/static/js/main.ec20263b.js.map",
     "592.90bcc563.chunk.js.map": "/testofdoodles/static/js/592.90bcc563.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c9ae8f9.css",
-    "static/js/main.5432adc4.js"
+    "static/css/main.545c1625.css",
+    "static/js/main.ec20263b.js"
   ]
 }
