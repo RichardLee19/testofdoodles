@@ -9,6 +9,7 @@ import GaragePage from './pages/GaragePage';
 import Garage from './pages/Garage';
 import CameraPage from './pages/CameraPage';
 import CatchPage from './pages/CatchPage';
+import ScreenOrientationLock from './components/ScreenOrientationLock';
 
 //cameron
 //the overall main app function
@@ -69,6 +70,7 @@ function App() {
     //the actual view of the app
   return (
 
+
     //cameron
     //the logic of the app. If activePage is null, we create a page. 
     //This does not set the activePage variable, but no route out of there 
@@ -76,6 +78,7 @@ function App() {
     //this allows full navigation of the site while maintaining the same URL
     <div className="app">
       {activePage ? activePage : <TestPage changePage={changePage} />}
+      <ScreenOrientationLock />
     </div>
   );
   

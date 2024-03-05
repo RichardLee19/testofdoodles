@@ -8,7 +8,7 @@ import Filter  from "../images/filter.png";
 import Porsche from "../images/porsche-_car.jpg";
 import PorLogo from "../images/porsche.png";
 
-export default function HomePage(){
+export default function HomePage({changePage}){
 
     //the main return to display the home page or main feed
     return (
@@ -165,6 +165,8 @@ export default function HomePage(){
                     
                 </div>
             </ul>
+
+         <button onClick={() => {changePage("Test")}}>Go to Test Page</button>
             
         </div>
         
