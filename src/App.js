@@ -1,7 +1,6 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import React from 'react';
-import { useState } from 'react';
-
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 import TestPage from './pages/TestPage';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
@@ -11,77 +10,95 @@ import CameraPage from './pages/CameraPage';
 import CatchPage from './pages/CatchPage';
 import ScreenOrientationLock from './components/ScreenOrientationLock';
 
-//cameron
-//the overall main app function
 function App() {
-
-  //cameron
-  //the active page is the variable we use to switch pages. The value is the page the user is viewing
-  //setActivePage changes the variable activaPage via react's useState
   const [activePage, setActivePage] = useState(null);
   const [imageSrc, setImageSource] = useState("");
+  const [isDriving, setIsDriving] = useState(false); // State for tracking if user is driving
 
+  useEffect(() => {
+    const watchUserLocation = () => {
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
 
-  //cameron
-  //the navigation function
-  //page = the string of the page you want to go to
-  const  changePage = (page) =>
-    {
-
-      console.log("PAGE SENT: " + page);
-
-      //cameron
-      //the overall page navigation logic
-      switch(page)
-      {
-        case "Login":
-          setActivePage(<LoginPage changePage={changePage}/>)
-          break;
+      const success = (position) => {
+        const { speed } = position.coords;
+        // Speed is in meters per second, convert to km/h
+        const speedKMH = speed * 3.6;
+        console.log('User speed (km/h):', speedKMH);
         
-        case "Garage":
-          setActivePage(<GaragePage changePage={changePage}/>)
-          break;
+        // Check if the user is traveling too fast
+        if (speedKMH > 20) { // Adjust the threshold as needed
+          setIsDriving(true);
+        } else {
+          setIsDriving(false);
+        }
+      };
 
-        case "Home":
-          setActivePage(<HomePage changePage={changePage}/>)
-          break;
+      const error = (err) => {
+        console.warn(`ERROR(${err.code}): ${err.message}`);
+      };
 
-        case "Camera":
-          setActivePage(<CameraPage changePage={changePage} setSource={setImageSource}/>)
-          break;
+      const id = navigator.geolocation.watchPosition(success, error, options);
 
-        case "Test":
-          setActivePage(<TestPage changePage={changePage}/>)
-          break;
+      return () => navigator.geolocation.clearWatch(id);
+    };
 
-        case "Catch":
-          setActivePage(<CatchPage changePage={changePage} iSource={imageSrc}/>)
-          break;
+    const watchId = watchUserLocation();
 
-        default:
-          setActivePage(<TestPage changePage={changePage}/>)
-          break;
-      }
-        
+    return () => navigator.geolocation.clearWatch(watchId);
+  }, []); // Run effect only once when component mounts
+
+  const handleConfirmation = () => {
+    console.log("User confirmed not driving. Proceeding...");
+    setIsDriving(false);
+  };
+
+  const changePage = (page) => {
+    console.log("PAGE SENT: " + page);
+    switch(page) {
+      case "Login":
+        setActivePage(<LoginPage changePage={changePage}/>);
+        break;
+      case "Garage":
+        setActivePage(<GaragePage changePage={changePage}/>);
+        break;
+      case "Home":
+        setActivePage(<HomePage changePage={changePage}/>);
+        break;
+      case "Camera":
+        setActivePage(<CameraPage changePage={changePage} setSource={setImageSource}/>);
+        break;
+      case "Test":
+        setActivePage(<TestPage changePage={changePage}/>);
+        break;
+      case "Catch":
+        setActivePage(<CatchPage changePage={changePage} iSource={imageSrc}/>);
+        break;
+      default:
+        setActivePage(<TestPage changePage={changePage}/>);
+        break;
     }
-  
+  }
 
-    //cameron
-    //the actual view of the app
   return (
-
-
-    //cameron
-    //the logic of the app. If activePage is null, we create a page. 
-    //This does not set the activePage variable, but no route out of there 
-    //allows for it to NOT be set and still exit the page
-    //this allows full navigation of the site while maintaining the same URL
-    <div className="app">
-      {activePage ? activePage : <TestPage changePage={changePage} />}
-      <ScreenOrientationLock />
-    </div>
+    <>
+      <div className="app">
+        {activePage ? activePage : <TestPage changePage={changePage} />}
+      </div>
+      {isDriving && (
+        <div className="popup">
+          <div className="popup-inner">
+            <h2>Are you currently driving?</h2>
+            <p>Please confirm that you are not driving and accept full responsibility for anything that may occur.</p>
+            <button onClick={handleConfirmation}>I Agree</button>
+          </div>
+        </div>
+      )}
+    </>
   );
-  
 }
 
 export default App;

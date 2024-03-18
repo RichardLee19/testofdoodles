@@ -20,28 +20,44 @@ export default function Garage({changePage}) {
     const [catches, setCatches] = useState(-1)
     const [displayname, setDisplayname] = useState("")
 
-    useEffect(() => {
-        //this functions dependencies is [] so it only runs when this module is loaded
-        const fetchData = async () => {
-            try {
-                const response = await fetch(window.location.origin + '/garage');
-                if (!response.ok) {
-                    console.log("network error")
-                    throw new Error('Network response was not ok');
-                }
-                const jsonData = await response.json();
-                
-                setFollowers(jsonData["followers"])
-                setFollowing(jsonData["following"])
-                setCatches(jsonData["catches"])
-                setDisplayname(jsonData["displayname"])
-                
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
-        fetchData();
-    }, []);
+    // Import useEffect if not already imported
+
+// Define your mock data
+const mockData = {
+  followers: 1000,
+  following: 500,
+  catches: 50,
+  displayname: "John Doe"
+};
+
+// Define a mock fetch function
+const mockFetch = async () => {
+  return {
+    ok: true,
+    json: async () => mockData
+  };
+};
+
+// Inside your component
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      // Use your mockFetch function instead of fetch
+      const response = await mockFetch();
+
+      // Proceed with setting state using mock data
+      setFollowers(response.jsonData.followers);
+      setFollowing(response.jsonData.following);
+      setCatches(response.jsonData.catches);
+      setDisplayname(response.jsonData.displayname);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  fetchData();
+}, []);
+
 
     return (
         <div className="garageContainer">

@@ -46,6 +46,7 @@ export default function LoginPage({ changePage }) {
     const [emailErrorMessage, setEmailErrorMessage] = useState('');
     const [passErrorMessage, setPassErrorMessage] = useState('');
     const [passwordNotMatchError, setPasswordNotMatchError] = useState('');
+    const [logInFailureError, setLogInFailureError] = useState('');
     
     
     //Le Duong: state for pw pop up note for pw suggestions
@@ -67,6 +68,7 @@ export default function LoginPage({ changePage }) {
       setDisplayNameErrorMessage('');
       setEmailErrorMessage('');
       setPasswordNotMatchError('');
+      setLogInFailureError('');
     }
   
 
@@ -91,6 +93,7 @@ export default function LoginPage({ changePage }) {
         //fields are valid before continuing the rest of handleSubmitLogin.
         setEmailErrorMessage('');
         setPassErrorMessage('');
+        setLogInFailureError('');
 
         let hasError = false;
 
@@ -125,6 +128,7 @@ export default function LoginPage({ changePage }) {
                 setSuccessfulLogIn(true); //new; needed for redirect to homepage after successful login.
                 console.log("login success")
             } else {
+                setLogInFailureError('Login failed. Check credentials and try again.')
                 console.log("login error")
             }
         })
@@ -140,6 +144,11 @@ export default function LoginPage({ changePage }) {
         setPasswordNoteVisible(false);
         let hasError = false;
 
+        if(!validateDisplayName(input_displayname)) {
+            setDisplayNameErrorMessage("Display Name cannot be blank.")
+            hasError = true;
+        }
+
         if (!validateEmail(input_email)) {
             setEmailErrorMessage("Invalid email format.");
             hasError = true;
@@ -148,11 +157,6 @@ export default function LoginPage({ changePage }) {
         if (!validatePassword(input_password) || !validatePassword(check_password)) {
             setPassErrorMessage("Password field(s) cannot be blank.");
             return;
-        }
-
-        if(!validateDisplayName(input_displayname)) {
-            setDisplayNameErrorMessage("Display Name cannot be blank.")
-            hasError = true;
         }
 
         if (!handlePasswordCheck(input_password, check_password)) {
@@ -186,6 +190,7 @@ export default function LoginPage({ changePage }) {
                 setSuccessfulLogIn(true);
                 console.log("signup response received ", response)
             } else {
+
                 console.log("signup error")
             }
         })
@@ -236,6 +241,7 @@ export default function LoginPage({ changePage }) {
                     {emailErrorMessage && <div style={{color: 'red'}}>{emailErrorMessage}</div>}
                     <br />
                     <input type="password" value={input_password} onChange={handlePasswordChange} placeholder="Password" />
+                    {emailErrorMessage && <div style={{color: 'red'}}>{emailErrorMessage}</div>}
                     {passErrorMessage && <div style ={{color: 'red'}}>{passErrorMessage}</div>}
                     <br />
                     <button className="btn" onClick={handleForgottenPassword}>Forgot Password?</button>
