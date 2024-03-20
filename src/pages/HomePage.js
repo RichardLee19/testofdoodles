@@ -7,12 +7,14 @@ import Search from "../images/search.png";
 import Filter  from "../images/filter.png";
 import Porsche from "../images/porsche-_car.jpg";
 import PorLogo from "../images/porsche.png";
+import NoZoomOnTextBox from '../components/NoZoomOnText';
 
 export default function HomePage({changePage}){
 
     //the main return to display the home page or main feed
     return (
         <div>
+            <NoZoomOnTextBox />
             <div className="searchPad">
                 <img src={Filter}/>
                 <p> Filters: Only the coolest cars (Not objective at all)</p>

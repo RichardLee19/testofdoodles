@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './LoginPage.css';
-  
+import NoZoomOnTextBox from '../components/NoZoomOnText';
+import { mockFetch } from './MockFetch';
 
 export default function LoginPage({ changePage }) {
   
@@ -118,11 +119,7 @@ export default function LoginPage({ changePage }) {
         login_form.append("email", input_email)
         login_form.append("password", input_password)
 
-        //console.log(input_email, input_password)
-        fetch(window.location.origin + "/login", {
-            method: 'POST',
-            body: login_form
-        })
+        mockFetch(window.location.origin + "/login", { method: 'POST', body: login_form })
         .then(response => {
             if (response.ok) {
                 setSuccessfulLogIn(true); //new; needed for redirect to homepage after successful login.
@@ -180,11 +177,7 @@ export default function LoginPage({ changePage }) {
         signup_form.append("email", input_email)
         signup_form.append("password", input_password)
         
-        //console.log(input_displayname, input_email, input_password)
-        fetch(window.location.origin + "/register", {
-            method: 'POST',
-            body: signup_form
-        })
+        mockFetch(window.location.origin + "/register", { method: 'POST', body: signup_form })
         .then (response => {
             if (response.ok) {
                 setSuccessfulLogIn(true);
@@ -205,8 +198,7 @@ export default function LoginPage({ changePage }) {
 
     //Now this is a real doozy, this function uses a regular expression to ensure that
     //email input follows a certain combination. To successfully pass validation an email must be the following combination:
-    // (chars) + (@) + (chars) + (.) + (chars)
-    //Not perfect but it's what I managed to figure out. 
+    // (
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
@@ -232,6 +224,7 @@ export default function LoginPage({ changePage }) {
   //creates HTML container that swaps between login page and registration page by calling setIsLogIn function
   return (
       <div className="loginpage">
+        <NoZoomOnTextBox />
         <div className="container">
             <h1 className="h1">Welcome to SportsCar Spotter 🏎️ 💨</h1>
             { isLogIn ? (
